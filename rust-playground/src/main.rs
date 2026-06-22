@@ -6,6 +6,9 @@ fn build_greeting(user_name: &str) -> String{
 fn create_user_label(name: &str, role: &str) -> String{
     format!("{name} - {role}")
 }
+fn calculate_task_score(priority: u32, complexity: u32) -> u32 {
+    priority * complexity
+}
 
 fn main() {
     let app_name: &str = "TeamFlow Desktop";
@@ -30,4 +33,10 @@ fn main() {
     let label = create_user_label(user_name, user_role);
 
     println!("User: {label}");
+
+
+    let priority: u32 = 3;
+    let complexity: u32 = 5;
+    let score = calculate_task_score(priority, complexity);
+    println!("Score: {score}");
 }
